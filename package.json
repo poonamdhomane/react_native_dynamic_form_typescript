@@ -1,0 +1,28 @@
+{
+  "name": "react-native-form-fromjson",
+  "version": "0.0.1",
+  "description": "A react native library to create single page form using single json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poonamdhomane/react-native-form-fromjson.git"
+  },
+  "keywords": [
+    "dynamic-forms",
+    "dyno-form",
+    "react-native-forms",
+    "react-native-form-using-json",
+    "react-native-json-form",
+    "react-native-dynamic-form",
+    "react-native-input-form"
+  ],
+  "author": "Poonam Dhomane <poonamdhomane89@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poonamdhomane/react-native-form-fromjson/issues"
+  },
+  "homepage": "https://github.com/poonamdhomane/react-native-form-fromjson#readme"
+}
