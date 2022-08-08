@@ -1,5 +1,5 @@
 {
-  "name": "react_native_form_simplified_typescript",
+  "name": "react_native_dynamic_form_typescript",
   "version": "0.0.1",
   "description": "A react native library to create single page form using single json",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/poonamdhomane/react_native_form_simplified_typescript.git"
+    "url": "git+https://github.com/poonamdhomane/react_native_dynamic_form_typescript.git"
   },
   "keywords": [
     "dynamic-forms",
@@ -18,17 +18,20 @@
     "react-native-json-form",
     "react-native-dynamic-form",
     "react-native-input-form",
-    "react_native_form_simplified_typescript"
+    "react_native_form_simplified_typescript",
+    "react_native_dynamic_form_typescript"
   ],
   "author": "Poonam Dhomane <poonamdhomane89@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/poonamdhomane/react_native_form_simplified_typescript/issues"
+    "url": "https://github.com/poonamdhomane/react_native_dynamic_form_typescript/issues"
   },
-  "homepage": "https://github.com/poonamdhomane/react_native_form_simplified_typescript#readme",
+  "homepage": "https://github.com/poonamdhomane/react_native_dynamic_form_typescript#readme",
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
     "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-native": "^0.69.3",
     "react-native-google-places-autocomplete": "^2.4.1",
     "react-native-image-crop-picker": "^0.38.0",
     "react-native-modal-datetime-picker": "^13.1.2",
