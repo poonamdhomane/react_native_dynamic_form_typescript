@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 // import {fontScale, scale} from 'react-native-utils-scale';
-import {StyleSheet} from 'react-native';
-import {Theme, useThemeAwareObject} from '../../../support/theme';
+import { StyleSheet } from "react-native";
+import { Theme, useThemeAwareObject } from "../../support/theme";
 
 const createStyles = (theme: Theme) => {
   const styles = StyleSheet.create({
@@ -11,26 +11,26 @@ const createStyles = (theme: Theme) => {
     },
     containerStyle: {
       backgroundColor: theme.colors.background,
-      borderColor: 'lightgray',
+      borderColor: "lightgray",
       borderRadius: 7,
       borderWidth: 1,
       height: 50,
       marginBottom: 10,
-      width: '100%',
+      width: "100%",
     },
     labelStyle: {
       marginTop: -10,
       marginLeft: 10,
-      position: 'absolute',
+      position: "absolute",
       backgroundColor: theme.colors.background,
       color: theme.colors.textColor,
     },
     inputTextStyle: {
-      fontWeight: 'bold',
+      fontWeight: "bold",
       fontSize: 18,
-      marginVertical: 'auto',
+      marginVertical: "auto",
       marginHorizontal: 20,
-      textAlignVertical: 'center',
+      textAlignVertical: "center",
       color: theme.colors.textColor,
     },
     activeColor: {

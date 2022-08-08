@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Dropdown} from 'react-native-element-dropdown';
-import {onChange} from 'react-native-reanimated';
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Dropdown } from "react-native-element-dropdown";
 // import { fontScale, scale } from "react-native-utils-scale";
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import {useThemeAwareObject, Theme} from '../../support';
+import AntDesign from "react-native-vector-icons/AntDesign";
+import { useThemeAwareObject, Theme } from "../support";
 
 const createStyles = (theme: Theme) => {
   const styles = StyleSheet.create({
@@ -22,7 +21,7 @@ const createStyles = (theme: Theme) => {
     },
     containerStyle: {
       backgroundColor: theme.colors.background,
-      color: 'yellow',
+      color: "yellow",
     },
     activeColor: {
       activeColor: theme.colors.textColor,
@@ -31,7 +30,7 @@ const createStyles = (theme: Theme) => {
       marginRight: 5,
     },
     label: {
-      position: 'absolute',
+      position: "absolute",
       backgroundColor: theme.colors.background,
       color: theme.colors.textColor,
       left: 16,
@@ -61,7 +60,7 @@ const createStyles = (theme: Theme) => {
   return styles;
 };
 
-const DropdownComponent = ({options, name, onChange, value}) => {
+const DropdownComponent = ({ options, name, onChange, value }) => {
   const [values, setValues] = useState(value);
   const [isFocus, setIsFocus] = useState(false);
   const styles = useThemeAwareObject(createStyles);
@@ -69,7 +68,7 @@ const DropdownComponent = ({options, name, onChange, value}) => {
   const renderLabel = () => {
     if (value || isFocus) {
       return (
-        <Text style={[styles.label, isFocus && {color: 'white'}]}>
+        <Text style={[styles.label, isFocus && { color: "white" }]}>
           {/* Dropdown label */}
         </Text>
       );
@@ -82,7 +81,7 @@ const DropdownComponent = ({options, name, onChange, value}) => {
       {renderLabel()}
       <Dropdown
         name={name}
-        style={[styles.dropdown, isFocus && {borderColor: 'white'}]}
+        style={[styles.dropdown, isFocus && { borderColor: "white" }]}
         placeholderStyle={styles.placeholderStyle}
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
@@ -94,12 +93,12 @@ const DropdownComponent = ({options, name, onChange, value}) => {
         maxHeight={scale(200)}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'Select item' : '...'}
+        placeholder={!isFocus ? "Select item" : "..."}
         searchPlaceholder="Search..."
         value={values}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        onChange={item => {
+        onChange={(item) => {
           setValues(item.value);
           onChange(item.value);
           setIsFocus(false);

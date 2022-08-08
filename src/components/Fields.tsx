@@ -1,32 +1,32 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
-import {useController} from 'react-hook-form';
-import {TextInput} from 'react-native-paper';
-import {Checkbox} from 'react-native-paper';
-import DatePicker from '../views/DatePicker/DatePicker';
-import {ImageOrVideo} from 'react-native-image-crop-picker';
-import {OTPField} from '../views/OTPField';
-import {GooglePlacesInput} from '../views/GooglePlacesInput';
-import Dropdown from '../views/Dropdown';
-import {MobileInput} from '../views/MobileNumber/MobileInput';
-import {PickImage} from '../views/image/PickImage';
-import {useIForm} from './IFormProvider';
-import {Theme} from '../../support/theme';
-import {useFormColor, useFormStyle} from './Styles';
-import Input from '../views/Input';
-import Logo from '../views/Logo';
-import {PoweredBy} from '../views/PoweredBy';
+import React, { useState } from "react";
+import { View, Text } from "react-native";
+import { useController } from "react-hook-form";
+import { TextInput } from "react-native-paper";
+import { Checkbox } from "react-native-paper";
+import DatePicker from "../views/DatePicker/DatePicker";
+import { ImageOrVideo } from "react-native-image-crop-picker";
+import { OTPField } from "../views/OTPField";
+import { GooglePlacesInput } from "../views/GooglePlacesInput";
+import Dropdown from "../views/Dropdown";
+import { MobileInput } from "../views/MobileNumber/MobileInput";
+import { PickImage } from "../views/image/PickImage";
+import { useIForm } from "./IFormProvider";
+import { Theme } from "../support/theme";
+import { useFormColor, useFormStyle } from "./Styles";
+import Input from "../views/Input";
+import Logo from "../views/Logo";
+import { PoweredBy } from "../views/PoweredBy";
 
-export default function Fields({object, control, imageLoader = undefined}) {
+export default function Fields({ object, control, imageLoader = undefined }) {
   const nameField = object.name;
   const {
-    field: {onChange, onBlur, name, value, ref},
-    fieldState: {invalid, isTouched, isDirty, error},
-    formState: {touchedFields, dirtyFields, errors},
+    field: { onChange, onBlur, name, value, ref },
+    fieldState: { invalid, isTouched, isDirty, error },
+    formState: { touchedFields, dirtyFields, errors },
   } = useController({
     name: nameField,
     control,
-    rules: {required: true},
+    rules: { required: true },
     defaultValue: object.value,
   });
 
@@ -35,11 +35,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
     // nameField,
     options,
     label,
-    infoText = '',
+    infoText = "",
     placeholder,
   } = object;
   const [secureTextEntry, setSecureTextEntry] = useState(true);
-  let {sendFieldsDataBackToFormWhileEditing, outlined} = useIForm();
+  let { sendFieldsDataBackToFormWhileEditing, outlined } = useIForm();
   let style = useFormStyle();
   let color = useFormColor();
 
@@ -60,7 +60,7 @@ export default function Fields({object, control, imageLoader = undefined}) {
     // console.log("Erorrrs 3333 =====>", errors);
 
     switch (type) {
-      case 'text':
+      case "text":
         return (
           <Input
             type="text"
@@ -68,11 +68,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
             onBlur={onBlur}
             onChange={onChange}
             value={value}
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'age':
+      case "age":
         return (
           <Input
             type="age"
@@ -81,11 +81,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
             onChange={onChange}
             value={value}
             keyboardType="number-pad"
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'textarea':
+      case "textarea":
         return (
           <Input
             type="textarea"
@@ -95,11 +95,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
             value={value}
             keyboardType="number-pad"
             multiline={true}
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'mobile':
+      case "mobile":
         return (
           <Input
             type="textarea"
@@ -111,11 +111,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
             multiline={true}
             maxLength={10}
             contextMenuHidden={true}
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'password':
+      case "password":
         return (
           <Input
             type="text"
@@ -127,18 +127,18 @@ export default function Fields({object, control, imageLoader = undefined}) {
             right={
               <TextInput.Icon
                 color="white"
-                name={!secureTextEntry ? 'eye' : 'eye-off'}
+                name={!secureTextEntry ? "eye" : "eye-off"}
                 onPress={() => {
                   setSecureTextEntry(!secureTextEntry);
                   return false;
                 }}
               />
             }
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'email':
+      case "email":
         return (
           <Input
             type="text"
@@ -149,11 +149,11 @@ export default function Fields({object, control, imageLoader = undefined}) {
             right={<TextInput.Icon name="email" />}
             keyboardType="email-address"
             autoCapitalize="none"
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'countrypicker':
+      case "countrypicker":
         return (
           <MobileInput
             onBlur={onBlur}
@@ -162,7 +162,7 @@ export default function Fields({object, control, imageLoader = undefined}) {
             // sendMobile={sendMobile}
           />
         );
-      case 'url':
+      case "url":
         return (
           <Input
             type="text"
@@ -170,14 +170,14 @@ export default function Fields({object, control, imageLoader = undefined}) {
             onBlur={onBlur}
             onChange={onChange}
             value={value}
-            mode={outlined ? 'outlined' : 'flat'}
+            mode={outlined ? "outlined" : "flat"}
           />
         );
 
-      case 'otp':
+      case "otp":
         return <OTPField onChange={onChange} onBlur={onBlur} value={value} />;
 
-      case 'select':
+      case "select":
         return (
           // <DropdownComponentNew
           //   options={options}
@@ -197,23 +197,24 @@ export default function Fields({object, control, imageLoader = undefined}) {
               options={options}
               placeholder={placeholder}
               enabled
-              selectedCallback={e => {
+              selectedCallback={(e) => {
                 if (sendData) {
                   sendData(name, e, object);
                 }
                 onChange(e);
-              }}></Dropdown>
-            {object?.infoText !== '' && (
-              <Text style={{color: 'white'}}>{object?.infoText}</Text>
+              }}
+            ></Dropdown>
+            {object?.infoText !== "" && (
+              <Text style={{ color: "white" }}>{object?.infoText}</Text>
             )}
           </>
         );
 
-      case 'checkbox':
+      case "checkbox":
         return (
           <Checkbox
             ref={ref}
-            status={true ? 'checked' : 'unchecked'}
+            status={true ? "checked" : "unchecked"}
             onPress={() => {
               // setChecked(!checked);
             }}
@@ -221,57 +222,58 @@ export default function Fields({object, control, imageLoader = undefined}) {
             uncheckedColor="red"
           />
         );
-      case 'datetime':
+      case "datetime":
         // let rangeValue = { startDate: "10/11/2021", endDate: "10 AM" };
         return (
           <DatePicker
             name={nameField}
-            mode={'DATE_TIME'}
+            mode={"DATE_TIME"}
             ref={ref}
             rangeValue={value}
             onChange={onChange}
             label={label}
           />
         );
-      case 'bannerImage':
+      case "bannerImage":
         return (
           <PickImage
             imageLoader={imageLoader && imageLoader}
             style={styles.bannerImage}
-            onChange={image => onAvatarChange(name, image)}
+            onChange={(image) => onAvatarChange(name, image)}
             source={
-              value && value !== ''
-                ? {uri: value}
-                : require('../views/image/icons/avatar.png')
+              value && value !== ""
+                ? { uri: value }
+                : require("../views/image/icons/avatar.png")
             }
           />
         );
-      case 'profileImage':
+      case "profileImage":
         return (
           <PickImage
             style={styles.profileImage}
-            onChange={image => onAvatarChange(name, image)}
+            onChange={(image) => onAvatarChange(name, image)}
             source={
-              object?.value?.includes('http')
-                ? {uri: object.value}
-                : require('../views/image/icons/avatar.png')
+              object?.value?.includes("http")
+                ? { uri: object.value }
+                : require("../views/image/icons/avatar.png")
             }
           />
         );
-      case 'googleplaces':
+      case "googleplaces":
         return (
           <>
             <GooglePlacesInput selectedCallback={onChange} />
             <View
               style={{
                 height: 1,
-                width: '100%',
-                backgroundColor: 'white',
-              }}></View>
+                width: "100%",
+                backgroundColor: "white",
+              }}
+            ></View>
           </>
         );
 
-      case 'logo':
+      case "logo":
         return (
           <>
             <Logo width={300} height={100} />
@@ -280,14 +282,14 @@ export default function Fields({object, control, imageLoader = undefined}) {
     }
   };
 
-  console.log('error :', error);
+  console.log("error :", error);
   return (
     <View>
       {getField()}
 
       <>
         {error && (
-          <Text style={{color: 'red'}}>
+          <Text style={{ color: "red" }}>
             {error.type ? error.type : error.message}
           </Text>
         )}
@@ -303,14 +305,14 @@ const styles = {
   },
 
   bannerImage: {
-    width: '100%',
+    width: "100%",
     height: 130,
     marginTop: 10,
   },
   profileImage: {
     width: 150,
     height: 150,
-    alignSelf: 'center',
+    alignSelf: "center",
     borderRadius: 75,
   },
 };

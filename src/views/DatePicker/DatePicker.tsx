@@ -7,11 +7,7 @@ import {
   Appearance,
 } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import { Button } from "react-native-paper";
-import { onChange } from "react-native-reanimated";
-import { compareAsc, format } from "date-fns";
 import { useDatePickerStyle } from "./style";
-import { styles } from "react-native-element-dropdown/src/TextInput/styles";
 import moment from "moment";
 // import { Appearance } from "react-native-appearance";
 

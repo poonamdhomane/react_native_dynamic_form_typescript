@@ -7,9 +7,9 @@ A dependency to create basic form using with just single JSON. Which even can re
 ## Installation
 
 ```
-npm install react-native-form-fromjson
+npm install react_native_form_simplified_typescript
                 OR
-yarn add react-native-form-fromjson
+yarn add react_native_form_simplified_typescript
 ```
 
 ## Usage
@@ -17,7 +17,9 @@ yarn add react-native-form-fromjson
 #### Live code example
 
 ```js live=true
-import InputForm, { IFormProvider } from "react-native-form-fromjson";
+import InputForm, {
+  IFormProvider,
+} from "react_native_form_simplified_typescript";
 ```
 
 ```js live=true

@@ -1,6 +1,6 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Theme, useTheme, useThemeAwareObject} from '../../support/theme';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Theme, useTheme, useThemeAwareObject } from "../support/theme";
 const createStyles = (theme: Theme) => {
   const styles = StyleSheet.create({
     container: {
@@ -18,14 +18,14 @@ const createStyles = (theme: Theme) => {
       fontFamily: theme.fonts.font,
     },
     buttonStyle: {
-      alignSelf: 'center',
-      justifyContent: 'flex-end',
-      borderColor: '#fff',
+      alignSelf: "center",
+      justifyContent: "flex-end",
+      borderColor: "#fff",
       borderRadius: 6,
       marginTop: 20,
       marginBottom: 50,
       height: 40,
-      width: '100%',
+      width: "100%",
       backgroundColor: theme.colors.primary,
       fontFamily: theme.fonts.font,
     },
